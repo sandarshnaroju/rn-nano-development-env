@@ -64,3 +64,4 @@ yarn-error.log
 
 # Actual RN-nano is in another repo
 src/react-native-nano/
+web/dist/
