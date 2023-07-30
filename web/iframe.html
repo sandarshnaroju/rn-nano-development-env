@@ -8,7 +8,7 @@
   </head>
   <body>
     <iframe
-      src="http://192.168.0.9:8080/"
+      src="http://192.168.0.8:8000/dashboard/preview/"
       width="340px"
       height="450px"
       screens="HELLLOW"
@@ -17,16 +17,43 @@
     <script>
       var iframe = document.getElementById('screens_iframe');
 
-      //   iframe.addEventListener('load', function (event) {
-      //     setTimeout(() => {
-      //       iframe.contentWindow.postMessage(
-      //         'Sandarsh',
-      //         'http:192.168.0.9:8080/',
-      //       );
-      //     }, 2000);
-      //   });
-      //   iframe.onload = function () {
-      //   };
+      iframe.addEventListener('load', function (event) {
+        setTimeout(() => {
+          iframe.contentWindow.postMessage(
+            JSON.stringify([
+              {
+                name: 'sssss',
+                screen: {
+                  v1: [
+                    {
+                      component: 'text',
+                      value: 'Hello ',
+                      props: {
+                        style: {
+                          fontSize: 30,
+                          alignSelf: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 'bold',
+                        },
+                      },
+                      onClick:
+                        '({ navigation, uiElements }) => {\n       \n        return uiElements;\n    }',
+                      onLongClick:
+                        '({ navigation, uiElements }) => {\n       \n        return uiElements;\n    }',
+                    },
+                  ],
+                },
+                style: {
+                  justifyContent: 'center',
+                  flex: 1,
+                },
+              },
+            ]),
+            'http://192.168.0.8:8000/dashboard/preview/',
+          );
+        }, 2000);
+      });
+      iframe.onload = function () {};
     </script>
   </body>
 </html>

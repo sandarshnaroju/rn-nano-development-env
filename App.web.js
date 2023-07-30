@@ -17,8 +17,6 @@ const App = () => {
       if (event) {
         if (typeof event.data === 'string') {
           if (event.data != null) {
-            // console.log('event.data', event.data);
-
             try {
               iframeScreens = JSON.parse(event.data);
               // console.log(
