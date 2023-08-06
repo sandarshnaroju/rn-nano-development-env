@@ -1,6 +1,6 @@
 {
   "name": "nanoweb",
-  "version": "0.0.53",
+  "version": "0.0.56",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
